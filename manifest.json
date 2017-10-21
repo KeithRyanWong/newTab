@@ -18,6 +18,11 @@
     "default_title": "Set your homepage"
   },
 
+  "icons": {
+    "48": "images/badge48.png",
+    "128": "images/badge128.png"
+  },
+
   "homepage_url": "http://keithwong.info",
   "permissions": ["tabs","activeTab","storage"],
 
