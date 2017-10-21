@@ -9,7 +9,7 @@ urlSubmission.value = getCurrentPage() || '';
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  const homepage = urlSubmission.value;
+  const homepage = formatURL(urlSubmission.value);
   setHomePage(homepage);
   window.close();
 });
@@ -19,6 +19,17 @@ function setHomePage(url) {
   chrome.storage.sync.set({
     'homepage': url,
   });
+}
+
+// format url to contain 'https' pre-string
+function formatURL(url) {
+  const regex = /^http/g;
+  
+  if (url && !regex.exec(url)) {
+    url = 'http://' + url;
+  }
+
+  return url;
 }
 
 // retrieve the current tab's url
