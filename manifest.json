@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "newTab",
+  "version": "1.0",
+
+  "description": "Redirects new tabs in chrome to a specified page",
+
+  "author": "Keith Wong",
+
+  "browser_action": {
+    "default_icon": {
+      "16": "images/badge16.png",
+      "32": "images/badge32.png",
+      "64": "images/badge64.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "newTab"
+  },
+
+  "homepage_url": "http://keithwong.info",
+  "permissions": ["tabs","activeTab","storage"],
+}
