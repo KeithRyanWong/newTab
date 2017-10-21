@@ -3,7 +3,8 @@ const submitBtn = document.getElementById('submit');
 
 
 // by default, set the current url as the intended homepage
-urlSubmission.value = getCurrentPage() || '';
+autoFillSubmission();
+
 
 // save the specified Homepage Url
 submitBtn.addEventListener("click", (e) => {
@@ -24,7 +25,7 @@ function setHomePage(url) {
 // format url to contain 'https' pre-string
 function formatURL(url) {
   const regex = /^http/g;
-  
+
   if (url && !regex.exec(url)) {
     url = 'http://' + url;
   }
@@ -32,7 +33,11 @@ function formatURL(url) {
   return url;
 }
 
-// retrieve the current tab's url
-function getCurrentPage() {
-  return chrome.tabs.query({ "active": true,  }, (tabs) => tabs);
+// retrieve the current tab's url and replace the submission URL text
+function autoFillSubmission() {
+  chrome.tabs.query({ "active": true, "lastFocusedWindow": true  }, setSubmissionURL);
+}
+
+function setSubmissionURL(tabs) {
+  urlSubmission.value = tabs[0].url || '';
 }
