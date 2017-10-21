@@ -15,9 +15,9 @@
       "64": "images/badge64.png"
     },
     "default_popup": "popup.html",
-    "default_title": "newTab"
+    "default_title": "Set your homepage"
   },
 
   "homepage_url": "http://keithwong.info",
-  "permissions": ["tabs","activeTab","storage"],
+  "permissions": ["tabs","activeTab","storage"]
 }
