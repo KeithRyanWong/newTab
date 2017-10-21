@@ -12,7 +12,7 @@ span {
   font-weight: bolder;
 }
 
-.submit {
+#submit {
   margin: 0 auto;
   width: 60px;
 }
